@@ -1,7 +1,6 @@
-
-
+---
 Автотесты работают в браузерах: Firefox, Edge, Chrome
-
+---
 Для корректной работы необходимо следующее:
 
 1. Подключение к интернету
@@ -28,10 +27,8 @@
 в) Body - Тело письма
 
 г) Signature - Подпись отправителя
----
-*Примечание*:  Тело письма по-умолчанию:
+
+**Примечание**:  Тело письма по-умолчанию:
 "Hello! 
 This is a test letter. Please, do not answer.
-
-@Developed by KhrulSA-Corp
----
+-@Developed by KhrulSA-Corp
