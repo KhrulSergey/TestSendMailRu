@@ -5,25 +5,25 @@ using NUnit.Framework;
 namespace TestSendMailRu
 {
     [TestFixture]
-    public class SendLetterTest
+    internal class SendLetterTest
     {
-        public Application App;
+        internal Application App;
 
         [SetUp]
-        public void SetUp()
+        internal void SetUp()
         {
             App = new Application();
         }
 
         [Test]
-        public void LoginAndSendLetter()
+        internal void LoginAndSendLetter()
         {
             App.LoginInMail();;
             Assert.IsTrue(App.SendLetter());
         }
 
         [TearDown]
-        public void TearDown()
+        internal void TearDown()
         {
             App.Quit();
             App = null;

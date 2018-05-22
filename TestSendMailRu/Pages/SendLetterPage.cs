@@ -6,7 +6,7 @@ namespace TestSendMailRu
 {
     internal class SendLetterPage : PageBase
     {
-        public SendLetterPage(IWebDriver driver) : base(driver)
+        internal SendLetterPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
         }
@@ -41,13 +41,18 @@ namespace TestSendMailRu
             FillBody(letterData.Body + letterData.Signature);
         }
 
-        public void SendLetter(LetterData letterData)
+        internal void SendLetter(LetterData letterData)
         {
             this.FillLetter(letterData);
             SendButtonLocator.Click();
             //LetterSubjectLocator.SendKeys(Keys.Control + Keys.Return);
         }
         
+
+        /// <summary>
+        /// Checking method for reading letters
+        /// </summary>
+        /// <returns></returns>
         internal bool IsOpenNewLetterSucessful()
         {
             try

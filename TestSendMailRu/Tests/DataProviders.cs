@@ -13,12 +13,12 @@ namespace TestSendMailRu
         /// <summary>
         /// Тип используемого браузера
         /// </summary>
-        public static BrowserTypeEnum BrowserType = BrowserTypeEnum.Chrome;
+        internal static BrowserTypeEnum BrowserType = BrowserTypeEnum.Chrome;
         
         /// <summary>
         /// Данные для авторизации в Почту
         /// </summary>
-        public static LoginData TestLogin
+        internal static LoginData TestLogin
         {
             get => new LoginData()
                 {
@@ -31,7 +31,7 @@ namespace TestSendMailRu
         /// <summary>
         /// Информация для отпраки письма
         /// </summary>
-        public static LetterData TestLetterBody
+        internal static LetterData TestLetterBody
         {
             get => new LetterData()
                 {
@@ -47,7 +47,7 @@ namespace TestSendMailRu
         /// Получение драйвера браузера в соответствии с требованиями 
         /// </summary>
         /// <returns>Драйвер браузера</returns>
-        public static IWebDriver GetDriverInstance()
+        internal static IWebDriver GetDriverInstance()
         {
             switch (BrowserType)
             {
@@ -61,7 +61,7 @@ namespace TestSendMailRu
             return null;
         }
 
-        public enum BrowserTypeEnum
+        internal enum BrowserTypeEnum
         {
             Chrome,
             FireFox,

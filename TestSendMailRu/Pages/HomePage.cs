@@ -5,22 +5,22 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace TestSendMailRu
 {
-    public class HomePageMailRu : PageBase
+    internal class HomePageMailRu : PageBase
     {
-       public HomePageMailRu(IWebDriver driver) : base(driver)
+       internal HomePageMailRu(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.Id, Using = "PH_logoutLink")]
-        public IWebElement LogoutButtonLocator;
+        internal IWebElement LogoutButtonLocator;
         [FindsBy(How = How.XPath, Using = "//span[@class='b-toolbar__btn__text b-toolbar__btn__text_pad']")]
-        public IWebElement NewMailLocator;
+        internal IWebElement NewMailLocator;
 
         /// <summary>
         /// Выход из почты
         /// </summary>
-        public void LogoutMail()
+        internal void LogoutMail()
         {
             LogoutButtonLocator.Click();
         }
@@ -28,7 +28,7 @@ namespace TestSendMailRu
         /// <summary>
         /// Создание нового письма
         /// </summary>
-        public void CreateNewLetter()
+        internal void CreateNewLetter()
         {
             //NewMailLocator.SendKeys("N");
             NewMailLocator.Click();

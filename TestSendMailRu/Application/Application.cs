@@ -3,14 +3,14 @@ using OpenQA.Selenium;
 
 namespace TestSendMailRu
 {
-    public class Application
+    internal class Application
     {
         private IWebDriver driver;
         private LoginPageMailRu loginPage;
         private HomePageMailRu homePage;
         private SendLetterPage sendLetterPage;
 
-        public Application()
+        internal Application()
         {
             driver = DataProviders.GetDriverInstance();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
@@ -52,7 +52,7 @@ namespace TestSendMailRu
             homePage.LogoutMail();
         }
 
-        public void Quit()
+        internal void Quit()
         {
             try
             {

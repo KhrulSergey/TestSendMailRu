@@ -4,19 +4,19 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace TestSendMailRu
 {
-    public class LoginPageMailRu : PageBase
+    internal class LoginPageMailRu : PageBase
     {
-        public LoginPageMailRu(IWebDriver driver) : base(driver)
+        internal LoginPageMailRu(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.Name, Using = "login")]
-        public IWebElement UsernameLocator;
+        internal IWebElement UsernameLocator;
         [FindsBy(How = How.Name, Using = "password")]
-        public IWebElement PasswordLocator;
+        internal IWebElement PasswordLocator;
         [FindsBy(How = How.Id, Using = "mailbox:submit")]
-        public IWebElement LoginButtonLocator;
+        internal IWebElement LoginButtonLocator;
 
         private void UserNameInputField(String username)
         {
@@ -33,14 +33,14 @@ namespace TestSendMailRu
             LoginButtonLocator.Click();
         }
 
-        public void LoginAs(LoginData loginData)
+        internal void LoginAs(LoginData loginData)
         {
             UserNameInputField(loginData.UserName);
             PasswordInputField(loginData.Password);
             SubmitLogin();
         }
 
-        public void OpenLoginPage(String linkTarget = "http://mail.ru")
+        internal void OpenLoginPage(String linkTarget = "http://mail.ru")
         {
             driver.Url = linkTarget;
         }

@@ -4,12 +4,12 @@ using OpenQA.Selenium.Support.UI;
 
 namespace TestSendMailRu
 {
-    public class PageBase
+    internal class PageBase
     {
         protected IWebDriver driver;
         protected WebDriverWait wait;
 
-        public PageBase(IWebDriver driver)
+        internal PageBase(IWebDriver driver)
         {
             this.driver = driver;
 
